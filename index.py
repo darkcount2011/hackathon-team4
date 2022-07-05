@@ -1,26 +1,8 @@
+from EnvironmentVariables import EnvironmentVariables
 from Pepper import Pepper
 
-# Robotic operating System - Tip van Daan
+env_variables = EnvironmentVariables.load()
 
-# read file contents
-def read_file(file_name):
-    with open(file_name, 'r') as f:
-        return f.read()
-
-# load variables from file
-def load_variables(file_name):
-    variables = {}
-    for line in read_file(file_name).splitlines():
-        if line.startswith('#'):
-            continue
-        if '=' not in line:
-            continue
-        k, v = line.split('=', 1)
-        variables[k] = v
-    return variables
-
-VARIABLES = load_variables(".env")
-
-pepper = Pepper(VARIABLES["PEPPER_IP"])
-pepper.tts.say("Hello world!")
-pepper.tts.say("I am Pepper.")
+pepper = Pepper(env_variables["PEPPER_IP"])
+pepper.tts.say("Who's joe?")
+pepper.tts.say("Joe momma")
