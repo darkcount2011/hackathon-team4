@@ -6,8 +6,8 @@ class TextToSpeech:
     DEFAULT_VOLUME = 100.0
     DEFAULT_LANGUAGE = "English"
 
-    def __init__(self, ip, port):
-        self.tts = ALProxy("ALTextToSpeech", ip, port)
+    def __init__(self, pepper):
+        self.tts = ALProxy("ALTextToSpeech", pepper._ip, pepper._port)
         self.reset()
 
     def say(self, message):
