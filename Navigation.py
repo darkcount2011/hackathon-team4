@@ -6,10 +6,6 @@ class Navigation:
     def __init__(self, pepper):
         self.navigation = ALProxy("ALNavigation", pepper._ip, pepper._port)
         self.motion = ALProxy("ALMotion", pepper._ip, pepper._port)
-    
-    # def moveTo(self, x, y):
-    #     reached_target = self.navigation.navigateTo(x, y)
-    #     print(reached_target)
 
     def explore(self, radius=2.0):
         self.motion.wakeUp()
