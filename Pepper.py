@@ -1,5 +1,7 @@
+from naoqi import ALProxy
+from Leds import Leds
+from Navigation import Navigation
 from TextToSpeech import TextToSpeech
-from Tablet import Tablet
 from Posture import Posture
 
 # Create a Pepper class
@@ -10,4 +12,9 @@ class Pepper:
         self._port = port
         self.tts = TextToSpeech(self)
         self.posture = Posture(self)
-        self.tablet = Tablet(self)
+        self.leds = Leds(self)
+        self.navigation = Navigation(self)
+    
+    def stop(self):
+        tmp = ALProxy("ServiceManager", self._ip, self._port)
+        tmp.stopAllServices()
