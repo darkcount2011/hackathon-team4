@@ -1,4 +1,6 @@
-from naoqi import ALProxy
+from Pepper import Pepper
+
+# Robotic operating System - Tip van Daan
 
 # read file contents
 def read_file(file_name):
@@ -18,14 +20,7 @@ def load_variables(file_name):
     return variables
 
 VARIABLES = load_variables(".env")
-print(VARIABLES)
 
-tts = ALProxy(
-    "ALTextToSpeech",
-    VARIABLES["PEPPER_IP"],
-    VARIABLES["PEPPER_PORT"]
-)
-
-tts.say("Hello, world!")
-
-# Robotic operating System - Tip van Daan
+pepper = Pepper(VARIABLES["PEPPER_IP"])
+pepper.tts.say("Hello world!")
+pepper.tts.say("I am Pepper.")
