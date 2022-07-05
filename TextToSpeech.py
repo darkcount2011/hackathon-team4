@@ -11,15 +11,6 @@ class TextToSpeech:
         self.reset()
 
     def say(self, message):
-        # change the pitch of the voice
-        self.tts.setParameter("pitchShift", self.DEFAULT_PITCH)
-        # change the speed of the voice
-        self.tts.setParameter("speed", self.DEFAULT_SPEED)
-        # change the volume of the voice
-        self.tts.setParameter("volume", self.DEFAULT_VOLUME)
-        # change the language of the voice
-        self.tts.setLanguage(self.DEFAULT_LANGUAGE)
-
         self.tts.say(message)
     
     def volume(self, volume):
