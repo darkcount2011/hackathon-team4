@@ -4,19 +4,23 @@ from Pepper import Pepper
 env_variables = EnvironmentVariables.load()
 
 pepper = Pepper(env_variables["PEPPER_IP"])
-# pepper.tts.volume(100)
-# pepper.tts.pitch(0.75)
-# pepper.tts.say("Good evening!")
 
-pepper.leds.chroma_mode()
+pepper.sleep()
+# pepper.wake()
 
-# pepper.leds.fade_ears(0, 1)
-# pepper.leds.fade_face(0, 200, 255, 1)
-# pepper.leds.fade_chest(255, 0, 255, 1)
-# pepper.stop()
-
+# pepper.leds.fade_chest(20, 50, 100, 0.5)
+# pepper.leds.fade_face(20, 50, 100, 0.5)
+# pepper.tts.say("Good morning! My name is Pepper.")
+# pepper.leds.fade_chest(20, 100, 50, 0.5)
+# pepper.leds.fade_face(20, 100, 50, 0.5)
 # pepper.posture.crouch()
 # pepper.posture.stand()
+# pepper.leds.fade_chest(20, 50, 100, 0.5)
+# pepper.leds.fade_face(20, 50, 100, 0.5)
 
-# pepper.navigation.explore(20.0)
+
 # pepper.navigation.visualize_map()
+
+
+# pepper.leds.chroma_mode()
+# pepper.navigation.explore(16.0)

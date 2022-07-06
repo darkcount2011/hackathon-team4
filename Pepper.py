@@ -1,3 +1,5 @@
+from Tablet import Tablet
+from Tracker import Tracker
 from naoqi import ALProxy
 from Leds import Leds
 from Navigation import Navigation
@@ -14,7 +16,13 @@ class Pepper:
         self.posture = Posture(self)
         self.leds = Leds(self)
         self.navigation = Navigation(self)
+        self.tablet = Tablet(self)
+        self.tracker = Tracker(self)
+        self.al = ALProxy("ALAutonomousLife", self._ip, self._port)
     
-    def stop(self):
-        tmp = ALProxy("ServiceManager", self._ip, self._port)
-        tmp.stopAllServices()
+    def sleep(self):
+        self.al.setState("disabled")
+        self.leds.off()
+    
+    def wake(self):
+        self.al.setState("solitary")

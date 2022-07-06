@@ -3,7 +3,7 @@ from naoqi import ALProxy
 class TextToSpeech:
     DEFAULT_PITCH = 1.0
     DEFAULT_SPEED = 1.0
-    DEFAULT_VOLUME = 100.0
+    DEFAULT_VOLUME = 50.0
     DEFAULT_LANGUAGE = "English"
 
     def __init__(self, pepper):
@@ -21,7 +21,7 @@ class TextToSpeech:
     
     def speed(self, speed):
         self.tts.setParameter("speed", speed)
-    
+
     def reset(self):
         self.tts.setParameter("pitchShift", self.DEFAULT_PITCH)
         self.tts.setParameter("speed", self.DEFAULT_SPEED)

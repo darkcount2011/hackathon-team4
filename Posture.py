@@ -7,12 +7,6 @@ class Posture:
     def crouch(self):
         self.setPosture("Crouch")
 
-    def lyOnBack(self):
-        self.setPosture("LyingBack")
-    
-    def lyOnBelly(self):
-        self.setPosture("LyingBelly")
-
     def sit(self):
         self.setPosture("Sit")
 
@@ -21,12 +15,6 @@ class Posture:
 
     def stand(self):
         self.setPosture("Stand")
-    
-    def initStand(self):
-        self.setPosture("StandInit")
-    
-    def zeroStand(self):
-        self.setPosture("StandZero")
     
     def setPosture(self, name, duration=1.0):
         self.posture.goToPosture(name, duration)
