@@ -21,7 +21,7 @@ class Navigation:
         self.navigation.startLocalization()
         self.navigation.navigateToInMap([0.0, 0.0, 0.0])
         self.navigation.stopLocalization()
-        self.visualize_map()
+        # self.visualize_map()
         self.navigation.stopExploration()
     
     def visualize_map(self):
