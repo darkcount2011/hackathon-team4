@@ -1,3 +1,4 @@
+from Motion import Motion
 from Tablet import Tablet
 from Tracker import Tracker
 from naoqi import ALProxy
@@ -18,6 +19,7 @@ class Pepper:
         self.navigation = Navigation(self)
         self.tablet = Tablet(self)
         self.tracker = Tracker(self)
+        self.motion = Motion(self)
         self.al = ALProxy("ALAutonomousLife", self._ip, self._port)
     
     def sleep(self):
@@ -25,4 +27,5 @@ class Pepper:
         self.leds.off()
     
     def wake(self):
-        self.al.setState("solitary")
+        self.al.setState("safeguard")
+        self.posture.stand()

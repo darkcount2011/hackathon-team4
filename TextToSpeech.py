@@ -2,8 +2,8 @@ from naoqi import ALProxy
 
 class TextToSpeech:
     DEFAULT_PITCH = 1.0
-    DEFAULT_SPEED = 1.0
-    DEFAULT_VOLUME = 50.0
+    DEFAULT_SPEED = 3.0
+    DEFAULT_VOLUME = 80.0
     DEFAULT_LANGUAGE = "English"
 
     def __init__(self, pepper):

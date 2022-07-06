@@ -5,8 +5,8 @@ env_variables = EnvironmentVariables.load()
 
 pepper = Pepper(env_variables["PEPPER_IP"])
 
-pepper.sleep()
-# pepper.wake()
+# pepper.sleep()
+pepper.wake()
 
 # pepper.leds.fade_chest(20, 50, 100, 0.5)
 # pepper.leds.fade_face(20, 50, 100, 0.5)
@@ -18,9 +18,9 @@ pepper.sleep()
 # pepper.leds.fade_chest(20, 50, 100, 0.5)
 # pepper.leds.fade_face(20, 50, 100, 0.5)
 
-
 # pepper.navigation.visualize_map()
 
-
 # pepper.leds.chroma_mode()
+# pepper.motion.disableAll()
+# pepper.motion.enableAll()
 # pepper.navigation.explore(16.0)

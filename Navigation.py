@@ -18,15 +18,14 @@ class Navigation:
         
         path = self.navigation.saveExploration()
         print("Exploration saved at path: \"" + path + "\"")
-        self.navigation.stopExploration()
         self.navigation.startLocalization()
         self.navigation.navigateToInMap([0.0, 0.0, 0.0])
         self.navigation.stopLocalization()
-
         self.visualize_map()
+        self.navigation.stopExploration()
     
     def visualize_map(self):
-        self.navigation.loadExploration("/home/nao/.local/share/Explorer/2022-07-05T234428.544Z.explo")
+        # self.navigation.loadExploration("/home/nao/.local/share/Explorer/2022-07-05T234428.544Z.explo")
 
         result_map = self.navigation.getMetricalMap()
         map_width = result_map[1]
