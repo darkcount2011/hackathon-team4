@@ -1,5 +1,12 @@
-# hackathon-team10
-Hacking by the sea 2022 - Team 10
+# hackathon-team4
+Hacking by the sea 2023 - Team 4
+
+# Update
+1. Create the `.env` file by duplicating the `.env.example` file and setting the correct IP.
+2. Make sure you have Docker installed.
+3. Run `docker compose up`
+
+# Legacy instructions below:
 
 # Installing python
 For this project a specific version of python is required.
