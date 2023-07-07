@@ -5,9 +5,9 @@ env_variables = EnvironmentVariables.load()
 
 pepper = Pepper(env_variables["PEPPER_IP"])
 
-# pepper.sleep()
+pepper.sleep()
 # pepper.wake()
-# pepper.leds.off()1
+# pepper.leds.off()
 
 # pepper.leds.fade_chest(20, 100, 50, 0.5)
 # pepper.leds.fade_face(20, 100, 50, 0.5)

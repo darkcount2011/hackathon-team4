@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  pepper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "9559:9559"
+    volumes:
+      - ./src:/app
+
