@@ -13,20 +13,25 @@ RUN apt-get -y install \
 	libasound-dev
 
 # set workdir for container
-WORKDIR /App
+WORKDIR /app
 
 # add naoqi OS
 ADD https://community-static.aldebaran.com/resources/2.5.10/Python%20SDK/pynaoqi-python2.7-2.5.7.1-linux64.tar.gz .
 RUN tar -xf pynaoqi-python2.7-2.5.7.1-linux64.tar.gz
 
 # set environment variables for python to find naoqi api
-ENV PYTHONPATH=/App/pynaoqi-python2.7-2.5.7.1-linux64/lib/python2.7/site-packages
-ENV DYLD_LIBRARY_PATH=/App/pynaoqi-python2.7-2.5.7.1-linux64/lib
+ENV PYTHONPATH=/app/pynaoqi-python2.7-2.5.7.1-linux64/lib/python2.7/site-packages
+ENV DYLD_LIBRARY_PATH=/app/pynaoqi-python2.7-2.5.7.1-linux64/lib
 
 # add requirements to container
-COPY requirements.txt .
+# COPY requirements.txt .
+
+# copy everything to the container
+COPY . .
 
 # install requirements in container
 RUN pip install -r requirements.txt
+
+EXPOSE 9559
 
 CMD python index.py
